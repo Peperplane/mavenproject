@@ -27,7 +27,6 @@ node('built-in')
     }
     stage('ContinuousDelivery')
     {
-        input message: 'Need approval from Delivery Manager!', submitter: 'Narayana'
         deploy adapters: [tomcat9(credentialsId: 'd79c5407-3b5e-4355-9bf2-4a1de40dd026', path: '', url: 'http://172.31.1.221:8080')], contextPath: 'prodapp', war: '**/*.war'        
     }
   }
